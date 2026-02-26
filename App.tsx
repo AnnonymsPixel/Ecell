@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
@@ -19,7 +18,6 @@ const App: React.FC = () => {
 
   // Default Events
   const [events, setEvents] = useState([
-<<<<<<< HEAD
     {
       id: 1,
       title: "Saksham: The Flagship Startup Fest",
@@ -29,35 +27,32 @@ const App: React.FC = () => {
     {
       id: 2,
       title: "Anvay: The Leadership Challenge",
-      desc: "Anvay is a three-day simulation of corporate leadership and strategic decision-making. The challenge ignites with an Auction Round, where leaders bid on \"blind resumes\" and build their dream teams. These teams then tackle real-world crises in cutting-edge domains like AI, Cybersecurity, and HealthTech, refining their solutions under the guidance of expert faculty mentors. The journey culminates in an intense 'pitching round' before a panel of industry veterans, where teams are judged on innovation, social impact, and execution excellence. It is a fast-paced environment that transforms raw talent into seasoned strategists ready to tackle global challenges.",
+      desc: "Anvay is a three-day simulation of corporate leadership and strategic decision-making. The challenge ignites with an Auction Round, where leaders bid on blind resumes and build their dream teams. These teams then tackle real-world crises in cutting-edge domains like AI, Cybersecurity, and HealthTech, refining their solutions under the guidance of expert faculty mentors. The journey culminates in an intense pitching round before a panel of industry veterans, where teams are judged on innovation, social impact, and execution excellence.",
       date: "2025"
     },
     {
       id: 3,
-      title: "DESIGN THINKING WORKSHOP",
-      desc: "The campus became a workshop for innovation as we teamed up with Atlas Skilltech University to host an intensive Design Thinking Bootcamp. Led by the esteemed Dr. Mohit Bhardwaj (HOD – UI/UX), the event focused on bridging the gap between technical logic and user-centric design. The technical heavy-lifting began with the AEIOU Framework, distilling complex observations into sharp, actionable POV Problem Statements. The energy shifted into high gear during the Crazy 8s phase, where students sketched eight distinct solutions in just eight minutes, later refined into professional Storyboards. The bootcamp culminated in compelling pitches, proving that when engineering precision meets design thinking, the results are truly impactful. Missed out? Stay tuned for our next workshop to level up your skill set!",
+      title: "Design Thinking Workshop",
+      desc: "An intensive Design Thinking Bootcamp in collaboration with Atlas Skilltech University, focusing on user-centric design and innovation frameworks like AEIOU and Crazy 8s. Students developed actionable problem statements and presented refined storyboard solutions.",
       date: "Past Event"
     }
-=======
-    { id: 1, title: "E-Summit", desc: "Our flagship annual entrepreneurship summit bringing together founders.", date: "Feb 2025" },
-    { id: 2, title: "Startup Weekend", desc: "A high-intensity 54-hour workshop to build a startup.", date: "Oct 2024" },
-    { id: 3, title: "Pitch Perfect", desc: "Showcase your business idea to a panel of venture capitalists.", date: "Dec 2024" },
-    { id: 4, title: "Workshop Series", desc: "Hands-on sessions on coding and business strategy.", date: "Weekly" },
-    { id: 5, title: "Speaker Sessions", desc: "Intimate talks with successful founders.", date: "Monthly" },
-    { id: 6, title: "Hackathon", desc: "Collaborate to build functional prototypes.", date: "Mar 2025" }
->>>>>>> 25d7fef36946329c0162a63077342cfa26ba0098
   ]);
 
   // Default Team
-  const [team, setTeam] = useState(Array.from({ length: 12 }, (_, i) => ({
-    id: i,
-    name: i === 0 ? "Dr. Lead Person" : `Member ${i + 1}`,
-    role: i === 0 ? "Faculty Incharge" : "Core Team Member",
-    socials: { linkedin: "#", instagram: "#", email: "mailto:ecell@rgit.ac.in" }
-  })));
+  const [team, setTeam] = useState(
+    Array.from({ length: 12 }, (_, i) => ({
+      id: i,
+      name: i === 0 ? "Dr. Lead Person" : `Member ${i + 1}`,
+      role: i === 0 ? "Faculty Incharge" : "Core Team Member",
+      socials: {
+        linkedin: "#",
+        instagram: "#",
+        email: "mailto:ecell@rgit.ac.in"
+      }
+    }))
+  );
 
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
@@ -67,11 +62,7 @@ const App: React.FC = () => {
   return (
     <div className="antialiased text-slate-900 font-sans selection:bg-accent/30 bg-white">
       <Navbar onAdminToggle={() => setIsAdminOpen(true)} />
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 25d7fef36946329c0162a63077342cfa26ba0098
       <main>
         <Hero />
         <About />
@@ -86,21 +77,12 @@ const App: React.FC = () => {
       <Footer onAdminToggle={() => setIsAdminOpen(true)} />
 
       {isAdminOpen && (
-<<<<<<< HEAD
         <AdminPanel
           onClose={() => setIsAdminOpen(false)}
           events={events}
           setEvents={setEvents}
           team={team}
           setTeam={setTeam}
-=======
-        <AdminPanel 
-          onClose={() => setIsAdminOpen(false)} 
-          events={events} 
-          setEvents={setEvents} 
-          team={team} 
-          setTeam={setTeam} 
->>>>>>> 25d7fef36946329c0162a63077342cfa26ba0098
         />
       )}
     </div>
